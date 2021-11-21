@@ -13,6 +13,20 @@ export const Content = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: 840px) {
+    padding: 2rem 1rem 8rem;
+  }
+
+  @media (max-width: 420px) {
+    flex-direction: column;
+
+    button {
+      margin-top: 3rem;
+      margin-bottom: -3rem;
+      width: 100%;
+    }
+  }
+
   button {
     font-size: 1rem;
     color: #fff;

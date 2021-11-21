@@ -13,7 +13,7 @@ export function Summary() {
         acc.deposits += transaction.amount;
         acc.total += transaction.amount;
       } else {
-        acc.withdraws -= transaction.amount;
+        acc.withdraws += transaction.amount;
         acc.total -= transaction.amount;
       }
 
@@ -40,6 +40,7 @@ export function Summary() {
           }).format(summary.deposits)}
         </strong>
       </div>
+
       <div>
         <header>
           <p>Saida</p>
@@ -52,6 +53,7 @@ export function Summary() {
           }).format(summary.withdraws)}
         </strong>
       </div>
+
       <div className="highlight-background">
         <header>
           <p>Total</p>
