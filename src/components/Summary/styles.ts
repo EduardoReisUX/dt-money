@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const FadeIn = keyframes`
+from {
+  transform: translateY(-4px);
+  opacity: 0;
+} 
+to {
+transform: translateX(0);
+  opacity: 1;
+}
+`;
 
 export const Container = styled.div`
   display: grid;
@@ -28,6 +39,7 @@ export const Container = styled.div`
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
     color: var(--text-title);
+    animation: ${FadeIn} 0.4s ease-in-out backwards calc(var(--order) * 0.2s);
 
     header {
       display: flex;
@@ -58,7 +70,7 @@ export const Container = styled.div`
       color: #fff;
 
       @media (max-width: 420px) {
-        order: -1;
+        //order: -1;
 
         strong {
           font-size: 1.5rem;

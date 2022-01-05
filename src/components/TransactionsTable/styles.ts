@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const FadeIn = keyframes`
+from {
+  transform: translateY(-4px);
+  opacity: 0;
+} 
+to {
+transform: translateX(0);
+  opacity: 1;
+}
+`;
 
 export const Container = styled.div`
   margin-top: 4rem;
@@ -23,6 +34,10 @@ export const Container = styled.div`
     padding: 1rem 2rem;
     text-align: left;
     line-height: 1.5rem;
+  }
+
+  tr {
+    animation: ${FadeIn} 0.4s ease-in-out backwards calc(var(--order) * 0.2s);
   }
 
   td {

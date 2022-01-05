@@ -27,8 +27,12 @@ export function Summary() {
   );
 
   return (
-    <Container>
-      <div>
+    <Container
+      style={{
+        visibility: `${transactions.length !== 0 ? "visible" : "hidden"}`,
+      }}
+    >
+      <div style={{ ["--order" as any]: transactions.length + 1 }}>
         <header>
           <p>Entradas</p>
           <img src={entrada} alt="entrada" />
@@ -41,7 +45,7 @@ export function Summary() {
         </strong>
       </div>
 
-      <div>
+      <div style={{ ["--order" as any]: transactions.length + 2 }}>
         <header>
           <p>Saida</p>
           <img src={saida} alt="saida" />
@@ -54,7 +58,10 @@ export function Summary() {
         </strong>
       </div>
 
-      <div className="highlight-background">
+      <div
+        style={{ ["--order" as any]: transactions.length + 3 }}
+        className="highlight-background"
+      >
         <header>
           <p>Total</p>
           <img src={total} alt="total" />

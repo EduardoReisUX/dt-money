@@ -17,8 +17,8 @@ export function TransactionsTable() {
         </thead>
 
         <tbody>
-          {transactions.map((transaction) => (
-            <tr key={transaction.id}>
+          {transactions.map((transaction, index) => (
+            <tr key={transaction.id} style={{ ["--order" as any]: index }}>
               <td>{transaction.title}</td>
 
               <td className={transaction.type}>
